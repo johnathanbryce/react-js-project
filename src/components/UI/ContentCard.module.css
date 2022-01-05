@@ -1,0 +1,13 @@
+.card {
+  margin-top: 2rem;
+}
+
+.content {
+  display: flex;
+
+  align-items: center;
+}
+
+.content p {
+  margin-left: 1.5rem;
+}

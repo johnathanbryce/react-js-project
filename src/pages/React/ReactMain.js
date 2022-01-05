@@ -3,6 +3,7 @@ import ModalOverlay from "../../components/UI/ModalOverlay";
 import Button from "../../components/UI/Button";
 
 import ReactHooksContent from "./ReactHooksContent";
+import ToDoReact from "./ToDoReact";
 
 const ReactMain = (props) => {
   const [showModalOverlayHooks, setShowModalOverlayHooks] = useState(false);
@@ -50,7 +51,8 @@ const ReactMain = (props) => {
         <h2> Other Content </h2>
       </Button>
 
-      <h2> To Study: </h2>
+      <h2> To Review: </h2>
+      <ToDoReact />
     </div>
   );
 };

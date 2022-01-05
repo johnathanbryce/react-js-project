@@ -1,38 +1,48 @@
 import React from "react";
+import ContentCard from "../../components/UI/ContentCard";
 
 const ReactHooksContent = (props) => {
   return (
     <div>
-      <h2> useState</h2>
-      <p>
-        info on useState...info on useState...info on useState...info on
+      <ContentCard
+        contentTitle="useState"
+        video="https://www.youtube.com/embed/O6P86uwfdR0"
+        content="     nfo on useState...info on useState...info on useState...info on
         useState...info on useState...info on useState...info on useState...info
         on useState...info on useState...info on useState...info on
         useState...info on useState...info on useState...info on useState...info
         on useState...info on useState...info on useState...info on
         useState...info on useState...info on useState...info on useState...info
         on useState...info on useState...info on useState...info on
-        useState...info on useState...
-      </p>
-      <h2> useEffect</h2>
-      <p>info on useEffect... </p>
-      <h2> useReducer</h2>
-      <p>info on useReducer... </p>
-      <p>info on useState... </p>
-      <h2> useEffect</h2>
-      <p>info on useEffect... </p>
-      <h2> useReducer</h2>
-      <p>info on useReducer... </p>
-      <p>info on useState... </p>
-      <h2> useEffect</h2>
-      <p>info on useEffect... </p>
-      <h2> useReducer</h2>
-      <p>info on useReducer... </p>
-      <p>info on useState... </p>
-      <h2> useEffect</h2>
-      <p>info on useEffect... </p>
-      <h2> useReducer</h2>
-      <p>info on useReducer... </p>
+        useState...info on useState... "
+        title="useState "
+      />
+      <ContentCard
+        contentTitle="useEffect"
+        video="https://www.youtube.com/embed/O6P86uwfdR0"
+        title="useEffect summary"
+        content="     nfo on useState...info on useState...info on useState...info on
+        useState...info on useState...info on useState...info on useState...info
+        on useState...info on useState...info on useState...info on
+        useState...info on useState...info on useState...info on useState...info
+        on useState...info on useState...info on useState...info on
+        useState...info on useState...info on useState...info on useState...info
+        on useState...info on useState...info on useState...info on
+        useState...info on useState... "
+      />
+      <ContentCard
+        contentTitle="useReducer"
+        video="https://www.youtube.com/embed/O6P86uwfdR0"
+        title="useReducer summary"
+        content="     nfo on useState...info on useState...info on useState...info on
+        useState...info on useState...info on useState...info on useState...info
+        on useState...info on useState...info on useState...info on
+        useState...info on useState...info on useState...info on useState...info
+        on useState...info on useState...info on useState...info on
+        useState...info on useState...info on useState...info on useState...info
+        on useState...info on useState...info on useState...info on
+        useState...info on useState... "
+      />
     </div>
   );
 };

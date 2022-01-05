@@ -13,7 +13,7 @@ const Header = () => {
         <ul>
           <li>
             <NavLink activeClassName={classes.active} to="/" exact>
-              Homeq
+              Home
             </NavLink>
           </li>
           <li>
