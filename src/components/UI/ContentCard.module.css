@@ -2,12 +2,28 @@
   margin-top: 2rem;
 }
 
-.content {
+.content,
+.notes {
   display: flex;
-
   align-items: center;
 }
 
 .content p {
   margin-left: 1.5rem;
+}
+
+.notes p {
+  margin-left: 3.5rem;
+}
+
+iframe {
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  .content,
+  .notes {
+    display: flex;
+    flex-direction: column;
+  }
 }
