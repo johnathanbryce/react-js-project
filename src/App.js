@@ -1,4 +1,5 @@
 import { Route } from "react-router-dom";
+import "./App.css";
 
 import Header from "./components/Layout/Header";
 import Card from "./components/UI/Card";

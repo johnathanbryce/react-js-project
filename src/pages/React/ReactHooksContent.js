@@ -1,4 +1,3 @@
-import React from "react";
 import ContentCard from "../../components/UI/ContentCard";
 import classes from "./ReactHooksContent.module.css";
 import useEffectImg1 from "../../images/useEffectImg1.jpg";
@@ -53,7 +52,6 @@ const ReactHooksContent = () => {
             </p>
           </div>
         }
-        title="useState "
       />
 
       <ContentCard
@@ -142,7 +140,6 @@ const ReactHooksContent = () => {
             </p>
           </div>
         }
-        title="useEffect "
       />
 
       <ContentCard
@@ -222,7 +219,6 @@ const ReactHooksContent = () => {
             </p>
           </div>
         }
-        title="useContext"
       />
 
       <ContentCard
@@ -293,7 +289,6 @@ const ReactHooksContent = () => {
             </p>
           </div>
         }
-        title="useReducer"
       />
 
       <ContentCard
@@ -355,7 +350,6 @@ const ReactHooksContent = () => {
             </p>
           </div>
         }
-        title="useRef"
       />
 
       <ContentCard
@@ -363,7 +357,6 @@ const ReactHooksContent = () => {
         video="https://www.youtube.com/embed/_AyFP5s69N4"
         externalLink="https://reactjs.org/docs/hooks-reference.html#usecallback"
         content={<div></div>}
-        title="useCallback"
       />
     </div>
   );

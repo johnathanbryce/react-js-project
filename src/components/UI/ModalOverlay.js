@@ -5,7 +5,7 @@ import classes from "./ModalOverlay.module.css";
 const ModalOverlay = (props) => {
   return (
     <div>
-      <div className={classes.backdrop} onClick={props.OnClick} />
+      <div className={classes.backdrop} onClick={props.onClick}></div>
       <div className={classes.modal}>
         <header className={classes.header}>
           <div className={classes.fixed}>

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import ModalOverlay from "../../components/UI/ModalOverlay";
 import Button from "../../components/UI/Button";
+import classes from "./ReactMain.module.css";
 
 import ReactHooksContent from "./ReactHooksContent";
 import ToDoReact from "./ToDoReact";
 
-const ReactMain = (props) => {
+const ReactMain = () => {
   const [showModalOverlayHooks, setShowModalOverlayHooks] = useState(false);
   const [showModalOverlayOther, setShowModalOverlayOther] = useState(false);
 
@@ -25,7 +26,7 @@ const ReactMain = (props) => {
   };
 
   return (
-    <div>
+    <div className={classes.reactMainContent}>
       {showModalOverlayHooks && (
         <ModalOverlay
           onClick={closeModals}
@@ -43,6 +44,7 @@ const ReactMain = (props) => {
       )}
 
       <h2> React - Key Notes/Concepts: </h2>
+
       <Button onClick={showModalHooks}>
         <h2>Important React Hooks </h2>
       </Button>

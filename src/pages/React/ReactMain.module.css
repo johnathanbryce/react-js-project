@@ -1,0 +1,11 @@
+.reactMainContent {
+  height: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .reactMainContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}

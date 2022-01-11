@@ -1,0 +1,50 @@
+form {
+  width: auto;
+  height: 3rem;
+}
+
+form input {
+  width: 15rem;
+}
+
+.toDoText {
+  overflow-wrap: break-word;
+}
+
+.toDoList {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  height: 100%;
+}
+
+.toDoItem {
+  font-size: small;
+  box-shadow: 0 1px 1px -1px gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.toDoButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  font-size: 0.65rem;
+}
+
+button {
+  font-size: 0.65rem;
+  margin: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  form input {
+    width: auto;
+  }
+  .toDoList {
+    width: 10rem;
+    height: 100%;
+  }
+}

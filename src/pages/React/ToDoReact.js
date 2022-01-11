@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import classes from "./ToDoReact.module.css";
 
 const ToDoReact = (props) => {
   // TODO consider using useReducer
+
   const [toDos, setToDos] = useState([]);
   const [toDoInput, setToDoInput] = useState(" ");
   const [toDoEditing, setToDoEditing] = useState(null);
@@ -71,44 +73,46 @@ const ToDoReact = (props) => {
   };
 
   return (
-    <div>
+    <div className={classes.reviewForm}>
       <form onSubmit={submitHandler}>
         <input type="text" onChange={inputChangeHandler} value={toDoInput} />
-        <button type="submit"> Add </button>
+        <button type="submit"> Add Review Note </button>
       </form>
 
-      {toDos.map((todo) => (
-        <div key={todo.id}>
-          {toDoEditing === todo.id ? (
-            <input
-              type="text"
-              onChange={(e) => setEditingText(e.target.value)}
-              value={editingText}
-            />
-          ) : (
-            <div> {todo.text} </div>
-          )}
+      <div className={classes.toDoList}>
+        {toDos.map((todo) => (
+          <div className={classes.toDoText} key={todo.id}>
+            {toDoEditing === todo.id ? (
+              <input
+                type="text"
+                onChange={(e) => setEditingText(e.target.value)}
+                value={editingText}
+              />
+            ) : (
+              <div className={classes.toDoItem}> {todo.text} </div>
+            )}
 
-          <button onClick={() => removeToDoItem(todo.id)}> Remove </button>
-          <input
-            type="checkbox"
-            onChange={() => toggleComplete(todo.id)}
-            checked={todo.completed}
-          />
+            <div className={classes.toDoButtons}>
+              <button onClick={() => removeToDoItem(todo.id)}>
+                {" "}
+                Remove Note{" "}
+              </button>
 
-          {toDoEditing === todo.id ? (
-            <button onClick={() => editToDo(todo.id)}> Submit Edits </button>
-          ) : (
-            <button
-              onClick={() => {
-                setToDoEditing(todo.id);
-              }}
-            >
-              Edit To Do
-            </button>
-          )}
-        </div>
-      ))}
+              {toDoEditing === todo.id ? (
+                <button onClick={() => editToDo(todo.id)}>Submit Edits</button>
+              ) : (
+                <button
+                  onClick={() => {
+                    setToDoEditing(todo.id);
+                  }}
+                >
+                  Edit Note
+                </button>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

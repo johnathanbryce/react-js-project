@@ -1,11 +1,14 @@
+.contentTitle {
+  box-shadow: 0 1px 1px -1px gray;
+}
+
 .card {
   margin-top: 2rem;
 }
 
-.content,
-.notes {
+.content {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 .content p,
@@ -21,9 +24,9 @@ small {
   margin-top: 1rem;
 }
 
-.side_content {
+.bottomContent {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
 }
 
 .notes p {
@@ -32,10 +35,9 @@ small {
 
 iframe {
   border-radius: 25px;
-  margin-bottom: 3rem;
 }
 
-button.btn {
+.btn {
   background: transparent;
   border: 0.15rem solid black;
   font-size: 0.75rem;
@@ -49,7 +51,7 @@ button.btn {
   transition: all 0.4s;
 }
 
-button.btn:hover {
+.btn:hover {
   background-color: lightpink;
   color: white;
   -webkit-transition: all 0.4s;
@@ -58,23 +60,11 @@ button.btn:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  .content,
-  .notes {
+  .bottomContent {
     display: flex;
     flex-direction: column;
   }
-  .side_content {
-    display: flex;
-    flex-direction: row;
-  }
-
-  iframe {
-    margin-bottom: 0.1rem;
-  }
-
-  button.btn {
-    position: relative;
-    left: 2rem;
-    width: 12.5rem;
+  .btn {
+    margin: 0.5rem 0 0.5rem 0;
   }
 }
