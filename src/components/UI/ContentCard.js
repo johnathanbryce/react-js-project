@@ -18,15 +18,23 @@ const ContentCard = (props) => {
       <h2> {props.contentTitle} </h2>
 
       <div className={classes.content}>
-        <iframe
-          width="200"
-          height="150"
-          src={props.video}
-          frameborder="0"
-          allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          title={props.title}
-        ></iframe>
+        <div className={classes.side_content}>
+          <iframe
+            width="200"
+            height="150"
+            src={props.video}
+            frameborder="0"
+            allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title={props.title}
+          ></iframe>
+
+          <button className={classes.btn}>
+            <a href={props.externalLink} target="_blank" rel="noreferrer">
+              {props.contentTitle + ` - learn more`}
+            </a>
+          </button>
+        </div>
         <p>{props.content}</p>
       </div>
 

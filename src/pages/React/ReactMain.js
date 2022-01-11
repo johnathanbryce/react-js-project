@@ -48,7 +48,7 @@ const ReactMain = (props) => {
       </Button>
 
       <Button onClick={showModalOther}>
-        <h2> Other Content </h2>
+        <h2>React Redux </h2>
       </Button>
 
       <h2> To Review: </h2>

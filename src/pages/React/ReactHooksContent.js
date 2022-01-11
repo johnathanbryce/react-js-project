@@ -1,5 +1,11 @@
 import React from "react";
 import ContentCard from "../../components/UI/ContentCard";
+import classes from "./ReactHooksContent.module.css";
+import useEffectImg1 from "../../images/useEffectImg1.jpg";
+import useEffectImg2 from "../../images/useEffectImg2.jpg";
+import useEffectImg3 from "../../images/useEffectImg3.jpg";
+import useReducerImg1 from "../../images/useReducer-reducerFnExample.jpeg";
+import useRefImg1 from "../../images/useRefExample.jpeg";
 
 const ReactHooksContent = () => {
   return (
@@ -7,7 +13,7 @@ const ReactHooksContent = () => {
       <ContentCard
         contentTitle="useState"
         video="https://www.youtube.com/embed/O6P86uwfdR0"
-        preview="https://www.w3schools.com/react/react_usestate.asp"
+        externalLink="https://reactjs.org/docs/hooks-state.html"
         content={
           <div>
             <p>
@@ -25,9 +31,8 @@ const ReactHooksContent = () => {
             </p>
             <p>
               <code>
-                {" "}
                 const [enteredTitle, setEnteredTitle] = useState("useState
-                Hook");{" "}
+                Hook");
               </code>
             </p>
             <ul>
@@ -42,40 +47,323 @@ const ReactHooksContent = () => {
               is the function used to update our state.
             </p>
             <p>
-              {" "}
-              Inside the <code>useState() </code> hook, you can track state in
+              Inside the <code>useState() </code> hook, you can manage state in
               the form of strings, numbers, booleans, arrays, obecjts, or any
-              combination of these.{" "}
+              combination of these.
             </p>
           </div>
         }
         title="useState "
       />
+
       <ContentCard
         contentTitle="useEffect"
-        video="https://www.youtube.com/embed/O6P86uwfdR0"
-        title="useEffect summary"
-        content="     nfo on useState...info on useState...info on useState...info on
-        useState...info on useState...info on useState...info on useState...info
-        on useState...info on useState...info on useState...info on
-        useState...info on useState...info on useState...info on useState...info
-        on useState...info on useState...info on useState...info on
-        useState...info on useState...info on useState...info on useState...info
-        on useState...info on useState...info on useState...info on
-        useState...info on useState... "
+        video="https://www.youtube.com/embed/0ZJgIjIuY7U"
+        externalLink="https://reactjs.org/docs/hooks-effect.html"
+        content={
+          <div>
+            <p>
+              useEffect allows you to perform side effects in your components.
+              useEffect accepts two arguments:
+            </p>
+            <ul>
+              <li> a function </li>
+              <li>
+                a dependency{" "}
+                <small>
+                  <em> (optional)</em>
+                </small>
+              </li>
+            </ul>
+            <p>
+              useEffect runs on every render but there are several ways to
+              control when side effects run:
+            </p>
+            <small>
+              <em> (hover over to view) </em>{" "}
+            </small>
+
+            <ol>
+              <li className={classes.hover_img}>
+                <a href="#">
+                  No dependecy passed <small> runs on every render </small>
+                  <span>
+                    <img
+                      src={useEffectImg1}
+                      alt="useEffect Example 1"
+                      height="300"
+                      width="500"
+                    />
+                  </span>
+                </a>
+              </li>
+              <li className={classes.hover_img}>
+                <a href="#">
+                  An empty array
+                  <small> runs only on the first render </small>
+                  <span>
+                    <img
+                      src={useEffectImg2}
+                      alt="useEffect Example 2"
+                      height="300"
+                    />
+                  </span>
+                </a>
+              </li>
+              <li className={classes.hover_img}>
+                <a href="#">
+                  Props or state values
+                  <small>
+                    runs on the first render and any time any dependency value
+                    changes{" "}
+                  </small>
+                  <span>
+                    <img
+                      src={useEffectImg3}
+                      alt="useEffect Example 3"
+                      height="300"
+                    />
+                  </span>
+                </a>
+              </li>
+            </ol>
+
+            <p>Some examples of side effects include:</p>
+            <ul>
+              <li> data fetching</li>
+              <li> setting up a subscription </li>
+              <li>manually changing the DOM </li>
+            </ul>
+
+            <p>
+              In relation to React class lifecycle methods, you can think of the
+              useEffect hook as a combination of componentDidMount,
+              componentDidUpdate, and componentWillUnmount combined.
+            </p>
+          </div>
+        }
+        title="useEffect "
       />
+
+      <ContentCard
+        contentTitle="useContext"
+        video="https://www.youtube.com/embed/5LrDIWkK_Bc"
+        externalLink="https://reactjs.org/docs/hooks-reference.html#usecontext"
+        content={
+          <div>
+            <p>
+              useContext allows us to bypass "prop drilling" (passing props down
+              through multiple levels of child components).{" "}
+            </p>
+
+            <p>
+              Using context, we can avoid passing props through intermediate
+              elements. Context is designed to share data that is considered
+              "global" for a tree of React components.
+            </p>
+
+            <p>
+              Some examples of when to use useContext:
+              <ul>
+                <li>authenticated user </li>
+                <li> theme </li>
+                <li> preferred language </li>
+              </ul>
+            </p>
+
+            <p>
+              To create context, you must first import createContext and
+              initialize it:
+            </p>
+            <p>
+              <code> import {"{createContext}"} from 'react'; </code>
+              <br />
+              <code> const userContext = createContext() </code>
+            </p>
+            <p>
+              In order to declare which props you'd like your child components
+              to have access to, you must wrap child components using the
+              Context Provider and provide the state value:
+            </p>
+            <p>
+              <code>
+                function Component1() <br />
+                {"  const UserContext = useContext();"} <br />
+                <br />
+              </code>
+              <code>{"<MyContextName.Provider value={user} "}</code> <br />
+              <code className={classes.nested}>
+                {"<Component2 value={user} "}
+              </code>
+              <br />
+              <code>{"</MyContextName.Provider} "}</code>
+            </p>
+
+            <p>
+              ... and then access in your desired child component by using the
+              useContext hook:
+            </p>
+
+            <p>
+              <pre>
+                <code>
+                  function Component3() <br />
+                  {"  const user = useContext(UserContext);"} <br />
+                  <br />
+                  {"  return (... <p> {user} </p> ... )"}
+                </code>
+              </pre>
+            </p>
+            <p>
+              Note: Before using useContext -- Context is primarily used when
+              some data needs to be accessible by many components at different
+              nesting levels. Apply useContext sparingly because it makes
+              component reuse more difficult
+            </p>
+          </div>
+        }
+        title="useContext"
+      />
+
       <ContentCard
         contentTitle="useReducer"
-        video="https://www.youtube.com/embed/O6P86uwfdR0"
-        title="useReducer summary"
-        content="     nfo on useState...info on useState...info on useState...info on
-        useState...info on useState...info on useState...info on useState...info
-        on useState...info on useState...info on useState...info on
-        useState...info on useState...info on useState...info on useState...info
-        on useState...info on useState...info on useState...info on
-        useState...info on useState...info on useState...info on useState...info
-        on useState...info on useState...info on useState...info on
-        useState...info on useState... "
+        video="https://www.youtube.com/embed/kK_Wqx3RnHk"
+        externalLink="https://reactjs.org/docs/hooks-reference.html#usereducer"
+        content={
+          <div>
+            <p>
+              useReducer helps us with state managemenet and is an alternative
+              to useState. It is a bit like useState, however, it has more
+              capabilities and is especially useful for more complex state.
+            </p>
+            <p>
+              <code>
+                const [state, dispatchFn] = useReducer(reducerFn, initialState,
+                initFn);
+              </code>
+              <ul>
+                <li>
+                  <code> state </code> - the state snapshot used in component
+                  re-render
+                </li>
+                <li>
+                  <code> dispatchFn </code> - a function that can be used to
+                  dispatch a new action (i.e. trigger an update of the state)
+                </li>
+
+                <li className={classes.hover_img}>
+                  <a href="#">
+                    <code> reducerFn</code> - a functuon that is triggered
+                    automatically once an action is dispatched (via
+                    dispatchFn()) - it receives the latest state snapshot and
+                    should return the new, updated state
+                    <span>
+                      <img
+                        src={useReducerImg1}
+                        alt="useReducer reducer function example"
+                        height="300"
+                      />
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <code> initialState </code> - the intial state
+                  <small>
+                    <br />
+                    <br />
+                    note: instead of using default values for initial state (ex:
+                    hard-coding it as '0'), generally when you work with
+                    Reducer/useReducer you should work with objects as values
+                    (ex: {"{ count : 0 }"})
+                  </small>
+                </li>
+                <li>
+                  <code> initFn </code> -a function to set the initial state
+                  programmatically
+                </li>
+              </ul>
+            </p>
+            <p>
+              useReducer accepts a reducer of type{" "}
+              <code> (state, action) {"=>"} newState </code>
+              and returns the current state paired with a <code>
+                dispatch
+              </code>{" "}
+              method.
+            </p>
+          </div>
+        }
+        title="useReducer"
+      />
+
+      <ContentCard
+        contentTitle="useRef"
+        video="https://www.youtube.com/embed/t2ypzz6gJm0"
+        externalLink="https://reactjs.org/docs/hooks-reference.html#useref"
+        content={
+          <div>
+            <p>
+              useRef returns a mutable ref object whose <code> .current </code>{" "}
+              property is initiaized to the passed argument{" "}
+              <code>(initialValue).</code>
+              The returned object will persist for the full lifetime of the
+              component.
+            </p>
+            <p>
+              <code> const refContainer = useRef(initialValue);</code>
+            </p>
+            <p>
+              useRef is similar to state in that you can store a previous value
+              in it that persists between renders, but it does NOT cause you to
+              re-render like state does.
+            </p>
+            <p>
+              useRef( ) only returns one item -- an object called{" "}
+              <code> current</code>
+            </p>
+            <p>
+              Essentially, useRef is like a "box" that can hold a mutable value
+              in its <code> .current </code> property.
+            </p>
+            <p>
+              useRef( ) creates a plain JavaScript object. The only difference
+              between useRef( ) and created a <code>{"{current: ...}"} </code>
+              object yourself is that useRef will give you the same ref object
+              on every render.
+            </p>
+            <p>
+              Note: useRef does not cause your component to update when its
+              content changes. Mutating the <code> .current </code> property
+              does not trigger a re-render
+            </p>
+            <p>
+              One of the most common use case for refs is referencing elements
+              inside your html (each element inside your document has a ref
+              attribute):
+              <br />
+              <br />
+              <code>
+                {
+                  "<input ref={inputRef} value={name} onChange={changeHandlerFn} /> "
+                }
+              </code>
+            </p>
+            <p className={classes.hover_img}>
+              <a href={useRefImg1} target="_blank" rel="noreferrer">
+                Click here for a useRef( ) example.
+              </a>
+            </p>
+          </div>
+        }
+        title="useRef"
+      />
+
+      <ContentCard
+        contentTitle="useCallback"
+        video="https://www.youtube.com/embed/_AyFP5s69N4"
+        externalLink="https://reactjs.org/docs/hooks-reference.html#usecallback"
+        content={<div></div>}
+        title="useCallback"
       />
     </div>
   );

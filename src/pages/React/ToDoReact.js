@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const ToDoReact = (props) => {
+  // TODO consider using useReducer
   const [toDos, setToDos] = useState([]);
   const [toDoInput, setToDoInput] = useState(" ");
   const [toDoEditing, setToDoEditing] = useState(null);
