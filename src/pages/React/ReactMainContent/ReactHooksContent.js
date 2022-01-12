@@ -1,10 +1,10 @@
-import ContentCard from "../../components/UI/ContentCard";
-import classes from "./ReactHooksContent.module.css";
-import useEffectImg1 from "../../images/useEffectImg1.jpg";
-import useEffectImg2 from "../../images/useEffectImg2.jpg";
-import useEffectImg3 from "../../images/useEffectImg3.jpg";
-import useReducerImg1 from "../../images/useReducer-reducerFnExample.jpeg";
-import useRefImg1 from "../../images/useRefExample.jpeg";
+import ContentCard from "../../../components/UI/ContentCard";
+import classes from "./ReactMainContent.module.css";
+import useEffectImg1 from "../../../images/useEffectImg1.jpg";
+import useEffectImg2 from "../../../images/useEffectImg2.jpg";
+import useEffectImg3 from "../../../images/useEffectImg3.jpg";
+import useReducerImg1 from "../../../images/useReducer-reducerFnExample.jpeg";
+import useRefImg1 from "../../../images/useRefExample.jpeg";
 
 const ReactHooksContent = () => {
   return (
@@ -314,7 +314,7 @@ const ReactHooksContent = () => {
             </p>
             <p>
               useRef( ) only returns one item -- an object called{" "}
-              <code> current</code>
+              <code> current.</code>
             </p>
             <p>
               Essentially, useRef is like a "box" that can hold a mutable value
@@ -329,7 +329,7 @@ const ReactHooksContent = () => {
             <p>
               Note: useRef does not cause your component to update when its
               content changes. Mutating the <code> .current </code> property
-              does not trigger a re-render
+              does not trigger a re-render.
             </p>
             <p>
               One of the most common use case for refs is referencing elements
@@ -356,7 +356,78 @@ const ReactHooksContent = () => {
         contentTitle="useCallback"
         video="https://www.youtube.com/embed/_AyFP5s69N4"
         externalLink="https://reactjs.org/docs/hooks-reference.html#usecallback"
-        content={<div></div>}
+        content={
+          <div>
+            <p> useCallback returns a memoized callback function </p>
+            <ul>
+              <li>
+                Note: think of memoization as catching a value so that it does
+                not need to be recalculated.{" "}
+              </li>
+            </ul>
+            <p>
+              {" "}
+              This allows us to isolate resource intensive functions so that
+              they will not automatically run on every render.{" "}
+            </p>
+            <p> useCallback only runs when one of its dependencies update. </p>
+            <p>
+              {" "}
+              <code>
+                {" "}
+                {
+                  "const memoizedCallback = useCallBack(  ()  => {doSomething(a, b)}, [a,b], ); "
+                }
+              </code>
+            </p>
+            <ul>
+              <li>
+                Note: useCallback and useMemo hooks are similar. The main
+                difference is that useMemo returns a memoized <em> value </em>{" "}
+                and useCallback returns a memoized <em> function</em>.
+              </li>
+            </ul>
+          </div>
+        }
+      />
+
+      <ContentCard
+        contentTitle="useMemo"
+        video="https://www.youtube.com/embed/THL1OPn72vo"
+        externalLink="https://reactjs.org/docs/hooks-reference.html#usememo"
+        content={
+          <div>
+            <p> useMemo returns a memoized value. </p>
+            <p>
+              <code>
+                {" "}
+                {
+                  " const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);"
+                }
+              </code>
+            </p>
+            <p> useMemo only runs when one of its dependencies update. </p>
+            <p>
+              <p>
+                {" "}
+                Pass a "create" function and an array of dependencies. useMemp
+                will recompute the memoized value when one of the dependencies
+                has changed. This helps to avoid expensive recalculations on
+                every render.{" "}
+              </p>{" "}
+              useMemo can be used to keep resource intensive functions from
+              needlessly running.{" "}
+            </p>
+            <ul>
+              <li>
+                Note: remember that the function passed to useMemo runs during
+                rendering. Do not do anything there that you normally wouldn't
+                do while rendering. (Ex: side effects belong in useEffect, not
+                useMemo).
+              </li>
+            </ul>
+          </div>
+        }
       />
     </div>
   );

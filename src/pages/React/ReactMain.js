@@ -3,26 +3,34 @@ import ModalOverlay from "../../components/UI/ModalOverlay";
 import Button from "../../components/UI/Button";
 import classes from "./ReactMain.module.css";
 
-import ReactHooksContent from "./ReactHooksContent";
+import ReactHooksContent from "./ReactMainContent/ReactHooksContent";
+import ReactRouterContent from "./ReactMainContent/ReactRouterContent";
 import ToDoReact from "./ToDoReact";
 
 const ReactMain = () => {
   const [showModalOverlayHooks, setShowModalOverlayHooks] = useState(false);
-  const [showModalOverlayOther, setShowModalOverlayOther] = useState(false);
+  const [showModalOverlayRedux, setShowModalOverlayRedux] = useState(false);
+  const [showModalOverlayRouter, setShowModalOverlayRouter] = useState(false);
 
   const showModalHooks = (e) => {
     e.preventDefault();
     setShowModalOverlayHooks(true);
   };
 
-  const showModalOther = (e) => {
+  const showModalRedux = (e) => {
     e.preventDefault();
-    setShowModalOverlayOther(true);
+    setShowModalOverlayRedux(true);
+  };
+
+  const showModalRouter = (e) => {
+    e.preventDefault();
+    setShowModalOverlayRouter(true);
   };
 
   const closeModals = () => {
     setShowModalOverlayHooks(false);
-    setShowModalOverlayOther(false);
+    setShowModalOverlayRouter(false);
+    setShowModalOverlayRedux(false);
   };
 
   return (
@@ -35,22 +43,34 @@ const ReactMain = () => {
         />
       )}
 
-      {showModalOverlayOther && (
+      {showModalOverlayRouter && (
         <ModalOverlay
           onClick={closeModals}
-          title="Other Content title "
-          content="other content "
+          title="React Router"
+          content={<ReactRouterContent />}
+        />
+      )}
+
+      {showModalOverlayRedux && (
+        <ModalOverlay
+          onClick={closeModals}
+          title="Redux "
+          content="Redux content component "
         />
       )}
 
       <h2> React - Key Notes/Concepts: </h2>
 
       <Button onClick={showModalHooks}>
-        <h2>Important React Hooks </h2>
+        <h3>Important React Hooks </h3>
       </Button>
 
-      <Button onClick={showModalOther}>
-        <h2>React Redux </h2>
+      <Button onClick={showModalRouter}>
+        <h3>React Router </h3>
+      </Button>
+
+      <Button onClick={showModalRedux}>
+        <h3>React Redux </h3>
       </Button>
 
       <h2> To Review: </h2>

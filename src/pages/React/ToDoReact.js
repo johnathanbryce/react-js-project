@@ -32,6 +32,10 @@ const ToDoReact = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
+    if (toDoInput.length === 0 || toDoInput.length === 1) {
+      return;
+    }
+
     const newToDo = {
       id: new Date().getTime(),
       text: toDoInput,
@@ -44,18 +48,6 @@ const ToDoReact = (props) => {
 
   const removeToDoItem = (id) => {
     const updatedToDos = toDos.filter((todo) => todo.id !== id);
-
-    setToDos(updatedToDos);
-  };
-
-  const toggleComplete = (id) => {
-    const updatedToDos = [...toDos].map((todo) => {
-      if (todo.id === id) {
-        todo.completed = !todo.completed; //toggles the todo item true or false
-      }
-
-      return todo; // returns every todo
-    });
 
     setToDos(updatedToDos);
   };
