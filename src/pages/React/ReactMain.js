@@ -5,6 +5,7 @@ import classes from "./ReactMain.module.css";
 
 import ReactHooksContent from "./ReactMainContent/ReactHooksContent";
 import ReactRouterContent from "./ReactMainContent/ReactRouterContent";
+import ReactReduxContent from "./ReactMainContent/ReactReduxContent";
 import ToDoReact from "./ToDoReact";
 
 const ReactMain = () => {
@@ -55,7 +56,7 @@ const ReactMain = () => {
         <ModalOverlay
           onClick={closeModals}
           title="Redux "
-          content="Redux content component "
+          content={<ReactReduxContent />}
         />
       )}
 
