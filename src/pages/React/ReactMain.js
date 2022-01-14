@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ModalOverlay from "../../components/UI/ModalOverlay";
 import Button from "../../components/UI/Button";
-import classes from "./ReactMain.module.css";
+import classes from "../MainContent.module.css";
 
 import ReactHooksContent from "./ReactMainContent/ReactHooksContent";
 import ReactRouterContent from "./ReactMainContent/ReactRouterContent";
@@ -35,7 +35,7 @@ const ReactMain = () => {
   };
 
   return (
-    <div className={classes.reactMainContent}>
+    <div className={classes.mainContent}>
       {showModalOverlayHooks && (
         <ModalOverlay
           onClick={closeModals}

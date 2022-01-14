@@ -7,8 +7,6 @@ import Container from "./components/UI/Container";
 import ReactMain from "./pages/React/ReactMain";
 import JavaScriptMain from "./pages/JavaScript/JavaScriptMain";
 
-console.log("Git Test");
-
 function App() {
   return (
     <Container>

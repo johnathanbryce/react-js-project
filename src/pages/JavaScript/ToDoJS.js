@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import classes from "./ToDoReact.module.css";
+import classes from "./ToDoJS.module.css";
 
-const ToDoReact = () => {
+const ToDoJS = () => {
   // TODO consider using useReducer
 
   const [toDos, setToDos] = useState([]);
@@ -31,7 +31,7 @@ const ToDoReact = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("in React submit");
+    console.log("in JS submit");
 
     if (toDoInput.length === 0 || toDoInput.length === 1) {
       return;
@@ -113,4 +113,4 @@ const ToDoReact = () => {
   );
 };
 
-export default ToDoReact;
+export default ToDoJS;

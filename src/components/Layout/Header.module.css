@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(223, 233, 240);
+  background-color: #e9f1f7;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@
 .header a:hover,
 .header a:active,
 .header a.active {
-  color: #5398f2;
+  color: #3f88c5;
   padding-bottom: 0.25rem;
   border-bottom: 4px solid white;
 }

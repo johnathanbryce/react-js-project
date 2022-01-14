@@ -4,10 +4,11 @@
   border-radius: 1rem;
   background-color: rgb(234, 243, 249);
   margin: 0.5rem;
-  width: 25rem;
+  width: 20rem;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+  color: #393e41;
 }
 
 .button:hover,
@@ -27,6 +28,11 @@
 
 @media only screen and (max-width: 500px) {
   .button {
-    width: 10rem;
+    width: 9rem;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    text-align: left;
   }
 }
