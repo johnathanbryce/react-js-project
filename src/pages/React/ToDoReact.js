@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import classes from "./ToDoReact.module.css";
 
 const ToDoReact = () => {
-  // TODO consider using useReducer
-
   const [toDos, setToDos] = useState([]);
   const [toDoInput, setToDoInput] = useState(" ");
   const [toDoEditing, setToDoEditing] = useState(null);
@@ -25,13 +23,14 @@ const ToDoReact = () => {
     localStorage.setItem("todos", toDoListSaved);
   }, [toDos]);
 
+  // end of local storage code
+
   const inputChangeHandler = (e) => {
     setToDoInput(e.target.value);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("in React submit");
 
     if (toDoInput.length === 0 || toDoInput.length === 1) {
       return;
