@@ -1,6 +1,6 @@
 import ContentCard from "../../../components/UI/ContentCard";
 
-const APIAndDataFetchingContent = () => {
+const APIContent = () => {
   return (
     <div>
       <ContentCard
@@ -60,15 +60,8 @@ const APIAndDataFetchingContent = () => {
           </div>
         }
       />
-
-      <ContentCard
-        contentTitle="Data Fetching"
-        video="https://www.youtube.com/embed/GZvSYJDk-us"
-        externalLink="https://developer.mozilla.org/en-US/docs/Web/API"
-        content={<div></div>}
-      />
     </div>
   );
 };
 
-export default APIAndDataFetchingContent;
+export default APIContent;

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import classes from "./JavaScriptMain.module.css";
 import ModalOverlay from "../../components/UI/ModalOverlay";
 import Button from "../../components/UI/Button";
@@ -13,11 +12,10 @@ import StringsAndNumbersContent from "./JavaScriptMainContent/StringsAndNumbers"
 import ThisKeywordContent from "./JavaScriptMainContent/ThisKeywordContent";
 import ClassesContent from "./JavaScriptMainContent/ClassesContent";
 import ObjectsContent from "./JavaScriptMainContent/ObjectsContent";
-
-import APIAndDataFetchingContent from "./JavaScriptMainContent/APIAndDataFetchingContent";
+import APIContent from "./JavaScriptMainContent/APIContent";
 import JSONContent from "./JavaScriptMainContent/JSONContent";
 
-// **TODO this will change to JS ToDO eventually.. merely a placeholder for now
+// to do list
 import ToDoJS from "./ToDoJS";
 
 const JavaScriptMain = () => {
@@ -29,7 +27,7 @@ const JavaScriptMain = () => {
   const [showThisKeyword, setShowThisKeyword] = useState(false);
   const [showClasses, setShowClasses] = useState(false);
   const [showObjects, setShowObjects] = useState(false);
-  const [showAPIAndDataFetching, setShowAPIAndDataFetching] = useState(false);
+  const [showAPI, setShowAPI] = useState(false);
   const [showJSON, setShowJSON] = useState(false);
 
   const showModalJQuery = (e) => {
@@ -74,7 +72,7 @@ const JavaScriptMain = () => {
 
   const showModalAPIAndDataFetching = (e) => {
     e.preventDefault();
-    setShowAPIAndDataFetching(true);
+    setShowAPI(true);
   };
 
   const showModalJSON = (e) => {
@@ -91,7 +89,7 @@ const JavaScriptMain = () => {
     setShowThisKeyword(false);
     setShowClasses(false);
     setShowObjects(false);
-    setShowAPIAndDataFetching(false);
+    setShowAPI(false);
     setShowJSON(false);
   };
 
@@ -161,11 +159,11 @@ const JavaScriptMain = () => {
         />
       )}
 
-      {showAPIAndDataFetching && (
+      {showAPI && (
         <ModalOverlay
           onClick={closeModals}
-          title="APIs and Data Fetching"
-          content={<APIAndDataFetchingContent />}
+          title="APIs"
+          content={<APIContent />}
         />
       )}
 
@@ -180,44 +178,44 @@ const JavaScriptMain = () => {
       <h2> JavaScript - Key Notes/Concepts: </h2>
 
       <div className={classes.btnContainer}>
-        <Button onClick={showModalJQuery}>
-          <h3> jQuery </h3>
-        </Button>
-
         <Button onClick={showModalDOM}>
           <h3>The DOM </h3>
-        </Button>
-
-        <Button onClick={showModalArray}>
-          <h3> Arrays </h3>
-        </Button>
-
-        <Button onClick={showModalMapsAndSets}>
-          <h3> Maps/Sets </h3>
         </Button>
 
         <Button onClick={showModalStringsAndNumbers}>
           <h3> Strings & Numbers </h3>
         </Button>
 
-        <Button onClick={showModalThisKeyword}>
-          <h3> The "this" Keyword </h3>
-        </Button>
-
-        <Button onClick={showModalClasses}>
-          <h3> Classes </h3>
+        <Button onClick={showModalArray}>
+          <h3> Arrays </h3>
         </Button>
 
         <Button onClick={showModalObjects}>
           <h3> Objects </h3>
         </Button>
 
+        <Button onClick={showModalClasses}>
+          <h3> Classes </h3>
+        </Button>
+
+        <Button onClick={showModalMapsAndSets}>
+          <h3> Maps/Sets </h3>
+        </Button>
+
+        <Button onClick={showModalThisKeyword}>
+          <h3> The "this" Keyword </h3>
+        </Button>
+
         <Button onClick={showModalAPIAndDataFetching}>
-          <h3> APIs / Data Fetching </h3>
+          <h3> APIs </h3>
         </Button>
 
         <Button onClick={showModalJSON}>
           <h3> JSON </h3>
+        </Button>
+
+        <Button onClick={showModalJQuery}>
+          <h3> jQuery </h3>
         </Button>
       </div>
 
