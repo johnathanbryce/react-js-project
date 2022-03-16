@@ -6,12 +6,17 @@ import Card from "./components/UI/Card";
 import Container from "./components/UI/Container";
 import ReactMain from "./pages/React/ReactMain";
 import JavaScriptMain from "./pages/JavaScript/JavaScriptMain";
+import Disclaimer from "./components/Disclaimer/Disclaimer";
 
 function App() {
   return (
     <Container>
       <Header />
+
       <Card>
+        <Route path="/">
+          <Disclaimer />
+        </Route>
         <Route path="/react">
           <ReactMain />
         </Route>

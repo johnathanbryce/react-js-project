@@ -19,6 +19,7 @@ const Header = () => {
               React
             </NavLink>
           </li>
+
           <li>
             <NavLink activeClassName={classes.active} to="/javascript">
               JavaScript
@@ -31,3 +32,11 @@ const Header = () => {
 };
 
 export default Header;
+
+/*
+   <li>
+            <NavLink activeClassName={classes.active} to="/react">
+              React
+            </NavLink>
+          </li>
+      */
